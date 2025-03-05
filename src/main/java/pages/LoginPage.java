@@ -17,21 +17,21 @@ public class LoginPage {
 
     public void openLoginPage() {
         driver.get("https://gor-pathology.web.app/");
-        sleep(2000);  // Ensuring full page load
+        sleep(2000);
     }
 
     public void login(String email, String password) {
-        sleep(1000);  // Short pause before interacting
+        sleep(1000);
         driver.findElement(emailField).sendKeys(email);
-        sleep(500);   // Just to be safe between fields
+        sleep(500);
         driver.findElement(passwordField).sendKeys(password);
         sleep(500);
         driver.findElement(loginButton).click();
-        sleep(2000);  // Wait for post-login screen to load or error to appear
+        sleep(2000);
     }
 
     public String getErrorMessage() {
-        sleep(1000);  // Give some time for error message to appear
+        sleep(1000);
         return driver.findElement(errorMessage).getText();
     }
 

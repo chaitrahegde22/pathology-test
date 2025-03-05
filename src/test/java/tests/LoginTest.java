@@ -11,7 +11,7 @@ public class LoginTest extends tests.BaseTest {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.openLoginPage();
         loginPage.login("test@kennect.io", "Qwerty@1234");
-        sleep(3000);  // Wait for home page to load
+        sleep(3000);
         Assert.assertTrue(driver.getCurrentUrl().contains("home"));
     }
 
@@ -20,7 +20,7 @@ public class LoginTest extends tests.BaseTest {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.openLoginPage();
         loginPage.login("invalid@kennect.io", "wrongPassword");
-        sleep(2000);  // Allow error message to appear
+        sleep(2000);
         String error = loginPage.getErrorMessage();
         Assert.assertTrue(error.contains("Invalid credentials"), "Expected error message not found!");
     }

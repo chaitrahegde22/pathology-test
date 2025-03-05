@@ -11,11 +11,10 @@ public class BaseTest {
 
     @BeforeMethod
     public void setUp() {
-//        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver"); // Update if necessary
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        sleep(1000);  // Slight delay before each test starts
+        sleep(1000);
     }
 
     @AfterMethod
